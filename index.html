@@ -4,15 +4,32 @@
     <title>Data Visualization 3JS</title>
     <style>
       body {
+        background-color: #7a8cff;
+        color: #fff;
         margin: 0;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
       }
       canvas {
         display: block;
       }
+      .info {
+        line-height: 0em;
+        /* margin-bottom: 3rem; */
+      }
     </style>
   </head>
   <body>
-    <p>Data</p>
+    <h1>Data Visualization</h1>
+    <h3 class="info">
+      X Axis : Time | Y Axis : IP Address | Z Axis : Protocol
+    </h3>
+    <h3>
+      Connecting Line Packet Length Color : &lt; 70 Yellow | &gt; 70 Light
+      Orange | &gt; 80 Dark Orange | &gt; 90 Red
+    </h3>
+    <h3 class="info">Yellow Square : Sender | Red Diamond : Destination</h3>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r120/three.js"></script>
     <script src="./app.js"></script>
   </body>

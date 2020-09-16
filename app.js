@@ -17,9 +17,18 @@ function drawData(jsonData, xArr, yArr, zArr) {
   var connection = [];
   var connectionGeometry = [];
   var connectionLine = [];
-  var connectionMaterial = new THREE.LineBasicMaterial({
-    color: 0xf59542,
+  var connectionMaterialB70 = new THREE.LineBasicMaterial({
+    color: 0xffe30f,
     //linewidth: 3 Turns out this setting doesn't work on most
+  });
+  var connectionMaterialA70 = new THREE.LineBasicMaterial({
+    color: 0xffc30f,
+  });
+  var connectionMaterialA80 = new THREE.LineBasicMaterial({
+    color: 0xff730f,
+  });
+  var connectionMaterialA90 = new THREE.LineBasicMaterial({
+    color: 0xff0f0f,
   });
   var geometryDestination = new THREE.SphereGeometry(0.2, 2, 2);
   var materialDestination = new THREE.MeshBasicMaterial({ color: 0xff3b3b });
@@ -64,6 +73,16 @@ function drawData(jsonData, xArr, yArr, zArr) {
     connectionGeometry[index] = new THREE.BufferGeometry().setFromPoints(
       connection[index]
     );
+    let connectionMaterial = null;
+    if (element.Length < 70) {
+      connectionMaterial = connectionMaterialB70;
+    } else if (element.Length > 70 && element.Length < 80) {
+      connectionMaterial = connectionMaterialA70;
+    } else if (element.Length > 80 && element.Length < 90) {
+      connectionMaterial = connectionMaterialA80;
+    } else {
+      connectionMaterial = connectionMaterialA90;
+    }
     connectionLine[index] = new THREE.Line(
       connectionGeometry[index],
       connectionMaterial
@@ -209,10 +228,8 @@ var animate = function () {
 
   if (camera.position.x <= 2) {
     left = false;
-    // camera.position.x -= 0.1;
   } else if (camera.position.x >= 7) {
     left = true;
-    // camera.position.x += 0.1;
   }
   if (left) {
     camera.position.z += 0.01;
