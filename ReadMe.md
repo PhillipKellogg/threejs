@@ -27,4 +27,4 @@ A 3D line chart was the best solution as it gave another plane of information. D
 - Source and Destination are displayed by a Yellow Square and a Red Diamond respectively. They are also connected by the packet length line.
 - Packet Length is shown by the color of the connecting line.
 
-## Best wishes and thank you for this opportunity, sincerely [Phillip Kellogg!](https://phillipkellogg.com/)
+## Best wishes, sincerely [Phillip Kellogg!](https://phillipkellogg.com/)
