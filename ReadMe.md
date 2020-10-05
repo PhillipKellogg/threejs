@@ -1,6 +1,6 @@
 # Data Visualization Phillip Kellogg
 
-Thank you for the opourtunity to this position, I would like to go over some of the designs and coding decisions influencing this data visualisation.
+I would like to go over some of the designs and coding decisions influencing this data visualisation.
 
 ## The Goal
 
